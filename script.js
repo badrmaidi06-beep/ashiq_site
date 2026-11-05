@@ -1,4 +1,5 @@
 
+
 const langBtn = document.getElementById("langBtn");
 let currentLang = "ar";
 
@@ -60,11 +61,11 @@ function fillWilayas() {
   wilayaSelect.innerHTML = "";
   wilayaSelect.append(opt("", "اختر الولاية", "Choisir une wilaya"));
 
-  wilayas.forEach(w =>
+  wilayas.forEach(w => {
     wilayaSelect.append(
       opt(w[0], `${w[0]} — ${w[1]}`, `${w[0]} — ${w[2]}`)
-    )
-  );
+    );
+  });
 }
 
 const communeFallback = document.createElement("input");
@@ -89,7 +90,6 @@ function fillCommunes() {
 
     communeSelect.disabled = true;
     communeSelect.required = false;
-
     communeFallback.hidden = true;
     communeFallback.required = false;
     communeFallback.value = "";
@@ -118,15 +118,14 @@ function fillCommunes() {
       (a.local || "").localeCompare(b.local || "", "ar")
     );
 
-    list.forEach(c =>
+    list.forEach(c => {
       communeSelect.append(
         opt(c.local || c.fr, c.local || c.fr, c.fr || c.local)
-      )
-    );
+      );
+    });
 
     communeSelect.disabled = false;
     communeSelect.required = true;
-
     communeFallback.hidden = true;
     communeFallback.required = false;
     communeFallback.value = "";
@@ -142,7 +141,6 @@ function fillCommunes() {
 
     communeSelect.disabled = true;
     communeSelect.required = false;
-
     communeFallback.hidden = false;
     communeFallback.required = true;
   }
@@ -335,8 +333,10 @@ function updateCountdown() {
     ["cdMinutes", m],
     ["cdSeconds", s]
   ]) {
-    document.getElementById(id).textContent =
-      String(val).padStart(2, "0");
+    const element = document.getElementById(id);
+    if (element) {
+      element.textContent = String(val).padStart(2, "0");
+    }
   }
 }
 
@@ -577,14 +577,9 @@ function showOrderConfirmation(order) {
 
     <div class="confirm-card">
       <div class="confirm-star">✧</div>
-
       <p>${escape(labels.success)}</p>
-
       <h2>${escape(labels.title)}</h2>
-
-      <p class="confirm-subtitle">
-        ${escape(labels.subtitle)}
-      </p>
+      <p class="confirm-subtitle">${escape(labels.subtitle)}</p>
 
       <div class="confirm-details">
         ${details.map(([label, value]) => `
@@ -596,16 +591,13 @@ function showOrderConfirmation(order) {
       </div>
 
       <p>${escape(labels.thanks)}</p>
-
       <div class="confirm-star">❧</div>
 
       <blockquote class="confirm-quote">
         « ${escape(labels.quote)} »
       </blockquote>
 
-      <p class="confirm-author">
-        ${escape(labels.author)}
-      </p>
+      <p class="confirm-author">${escape(labels.author)}</p>
 
       <button class="confirm-button" type="button">
         ${escape(labels.back)} ✧
@@ -666,7 +658,15 @@ form.addEventListener("submit", async e => {
 
   const delivery = document.querySelector(
     'input[name="delivery"]:checked'
-  ).value;
+  )?.value;
+
+  if (!delivery) {
+    feedback.textContent = currentLang === "ar"
+      ? "يرجى اختيار طريقة التوصيل."
+      : "Veuillez choisir un mode de livraison.";
+
+    return;
+  }
 
   const deliveryFee = delivery === "home"
     ? HOME_DELIVERY
@@ -680,7 +680,6 @@ form.addEventListener("submit", async e => {
     firstName: form.elements.firstName.value.trim(),
     lastName: form.elements.lastName.value.trim(),
     phone: form.elements.phone.value.trim(),
-
     quantity,
 
     wilaya: selectedWilaya
@@ -689,20 +688,17 @@ form.addEventListener("submit", async e => {
 
     wilayaCode: wilayaSelect.value,
     commune: communeValue,
-
-    delivery: delivery === "home" ? "home" : "office",
+    delivery,
 
     deliveryLabel: delivery === "home"
       ? (currentLang === "ar" ? "منزلي" : "À domicile")
       : (currentLang === "ar" ? "مكتب الاستلام" : "Point relais"),
 
     unitPrice: BOOK_PRICE,
-    deliveryFee: deliveryFee,
+    deliveryFee,
     total: totalAmount,
-
     language: currentLang,
     consent: form.elements.consent.checked,
-
     website: websiteField ? websiteField.value.trim() : ""
   };
 
@@ -710,8 +706,8 @@ form.addEventListener("submit", async e => {
 
   if (!endpoint) {
     feedback.textContent = currentLang === "ar"
-      ? "النموذج جاهز للمعاينة، لكنه غير متصل بالبريد بعد. فعّل خدمة الاستقبال قبل استقبال الطلبات."
-      : "Le formulaire est prêt pour l’aperçu, mais l’envoi n’est pas encore relié à l’e-mail.";
+      ? "النموذج غير متصل بالبريد الإلكتروني بعد."
+      : "Le formulaire n'est pas encore relié à l'e-mail.";
 
     return;
   }
@@ -720,24 +716,32 @@ form.addEventListener("submit", async e => {
 
   submit.disabled = true;
 
-  
-try {
-  const response = await fetch(endpoint, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "Accept": "application/json"
-    },
-    body: JSON.stringify(payload)
-  });
+  try {
+    feedback.textContent = currentLang === "ar"
+      ? "جارٍ إرسال طلبك..."
+      : "Envoi de votre commande...";
 
+    const response = await fetch(endpoint, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify(payload)
+    });
 
     const result = await response.json().catch(() => ({}));
 
-    if (!response.ok) {
-      throw new Error(result.message || "send_failed");
+    if (
+      !response.ok ||
+      String(result.success).toLowerCase() !== "true"
+    ) {
+      throw new Error(
+        result.message || `HTTP ${response.status}`
+      );
     }
 
+    // لا تظهر صفحة الشكر إلا بعد تأكيد نجاح الإرسال
     showOrderConfirmation(payload);
 
     form.reset();
@@ -752,8 +756,8 @@ try {
     console.error("Order submission error:", err);
 
     feedback.textContent = currentLang === "ar"
-      ? "تعذّر إرسال الطلب حالياً. يرجى المحاولة لاحقاً أو التواصل عبر Instagram."
-      : "L’envoi a échoué. Réessayez plus tard ou contactez-nous sur Instagram.";
+      ? "فشل إرسال الطلب: " + err.message
+      : "Échec de l'envoi : " + err.message;
 
   } finally {
     submit.disabled = false;
