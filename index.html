@@ -1,110 +1,337 @@
+
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#100d0a">
-  <meta name="description" content="عاشق من وراء الزمن — رواية بقلم بدر الدين. حكاية عشق وغموض بين الحاضر وبابل القديمة.">
-  <title>عاشق من وراء الزمن | بدر الدين</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#130d08">
+<meta name="description" content="عاشق من وراء الزمن — رواية بقلم بدر الدين.">
+<title>عاشق من وراء الزمن | بدر الدين</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;500;600;700;800&family=Parisienne&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="config.js"></script>
 </head>
 <body>
-  <div class="grain"></div>
-  <header class="topbar">
-    <a class="brand" href="#home" aria-label="الرئيسية">
-      <span class="brand-mark">✧</span>
-      <span data-ar="بدر الدين" data-fr="Badr Eddine">بدر الدين</span>
+<div class="grain" aria-hidden="true"></div>
+
+<div class="intro-screen" id="introScreen" aria-hidden="true">
+  <div class="intro-star">✧</div>
+  <p class="intro-small" data-ar="حكاية تتجاوز حدود الزمن" data-fr="Une histoire au-delà du temps">حكاية تتجاوز حدود الزمن</p>
+  <h2><span>عاشق</span><span>من وراء الزمن</span></h2>
+  <div class="intro-line"></div>
+  <small data-ar="بقلم بدر الدين" data-fr="Par Badr Eddine">بقلم بدر الدين</small>
+</div>
+
+<header class="topbar">
+  <a class="brand" href="#home" aria-label="عاشق من وراء الزمن">
+    <span class="brand-mark">✧</span>
+    <span>بدر الدين</span>
+  </a>
+
+  <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة" aria-expanded="false">☰</button>
+
+  <nav id="mainNav">
+    <a href="#story" data-ar="عن الرواية" data-fr="Le roman">عن الرواية</a>
+    <a href="#secrets" data-ar="أسرار بين الصفحات" data-fr="Secrets entre les pages">أسرار بين الصفحات</a>
+    <a href="#author" data-ar="عن الكاتب" data-fr="L’auteur">عن الكاتب</a>
+    <a href="#reserve" data-ar="الحجز" data-fr="Précommande">الحجز</a>
+  </nav>
+
+  <button class="lang-switch" id="langBtn" type="button" aria-label="Changer la langue">FR</button>
+</header>
+
+<main id="home">
+
+<section class="hero">
+  <div class="hero-orbit" aria-hidden="true"></div>
+  <div class="hero-glow"></div>
+
+  <div class="hero-content">
+    <p class="eyebrow fade-in" data-ar="حكاية تتجاوز حدود الزمن" data-fr="Une histoire au-delà du temps">حكاية تتجاوز حدود الزمن</p>
+
+    <h1 class="hero-title" data-ar="عاشق من<br>وراء الزمن" data-fr="Un amoureux<br>au-delà du temps">عاشق من<br>وراء الزمن</h1>
+
+    <div class="ornament">✧ ━━━━━━━━━ ✧</div>
+
+    <p class="byline">
+      <span data-ar="رواية بقلم" data-fr="Un roman de">رواية بقلم</span>
+      <strong data-ar="بدر الدين" data-fr="Badr Eddine">بدر الدين</strong>
+    </p>
+
+    <p class="hero-copy" data-ar="حين يلتقي الحاضر بأسرار بابل القديمة، يصبح للحب طريقٌ لا يعرفه الزمن." data-fr="Lorsque le présent rencontre les secrets de l’ancienne Babylone, l’amour emprunte un chemin que le temps ne connaît pas.">حين يلتقي الحاضر بأسرار بابل القديمة، يصبح للحب طريقٌ لا يعرفه الزمن.</p>
+
+    <a class="button button-gold" href="#story">
+      <span data-ar="اكتشف الرواية" data-fr="Découvrir le roman">اكتشف الرواية</span>
+      <span>↙</span>
     </a>
-    <nav>
-      <a href="#story" data-ar="عن الرواية" data-fr="Le roman">عن الرواية</a>
-      <a href="#author" data-ar="عن الكاتب" data-fr="L’auteur">عن الكاتب</a>
-      <a href="#reserve" data-ar="الحجز" data-fr="Réservation">الحجز</a>
-    </nav>
-    <button class="lang-switch" id="langBtn" type="button" aria-label="Change language">FR</button>
-  </header>
 
-  <main id="home">
-    <section class="hero">
-      <div class="hero-shade"></div>
-      <div class="hero-content">
-        <p class="eyebrow" data-ar="حكاية تتجاوز حدود الزمن" data-fr="Une histoire au-delà du temps">حكاية تتجاوز حدود الزمن</p>
-        <h1 data-ar="عاشق من<br>وراء الزمن" data-fr="Un amoureux<br>au-delà du temps">عاشق من<br>وراء الزمن</h1>
-        <div class="ornament">✧ ━━━━━━━━━ ✧</div>
-        <p class="byline"><span data-ar="رواية بقلم" data-fr="Un roman de">رواية بقلم</span> <strong data-ar="بدر الدين" data-fr="Badr Eddine">بدر الدين</strong></p>
-        <p class="hero-copy" data-ar="حين يلتقي الحاضر بأسرار بابل القديمة، يصبح للحب طريقٌ لا يعرفه الزمن." data-fr="Lorsque le présent rencontre les secrets de l’ancienne Babylone, l’amour emprunte un chemin que le temps ne connaît pas.">حين يلتقي الحاضر بأسرار بابل القديمة، يصبح للحب طريقٌ لا يعرفه الزمن.</p>
-        <a class="button button-gold" href="#story" data-ar="اكتشف الرواية" data-fr="Découvrir le roman">اكتشف الرواية</a>
-      </div>
-      <div class="hero-cover-wrap">
-        <div class="cover-frame"><img src="assets/front-cover.png" alt="غلاف رواية عاشق من وراء الزمن"></div>
-        <span class="cover-caption" data-ar="قريباً — الإصدار المنتظر" data-fr="Bientôt — sortie attendue">قريباً — الإصدار المنتظر</span>
-      </div>
-      <div class="scroll-cue"><span></span><small data-ar="اكتشف الحكاية" data-fr="Explorer">اكتشف الحكاية</small></div>
-    </section>
+    <div class="hero-note">
+      <span class="tiny-star">✧</span>
+      <span data-ar="الإصدار المنتظر · 09 نوفمبر 2026" data-fr="Sortie attendue · 09 novembre 2026">الإصدار المنتظر · 09 نوفمبر 2026</span>
+    </div>
+  </div>
 
-    <section class="intro section" id="story">
-      <div class="section-label"><span>01</span><i></i><span data-ar="عن الرواية" data-fr="Le roman">عن الرواية</span></div>
-      <div class="intro-grid">
-        <div>
-          <p class="kicker" data-ar="بين ماضٍ غابر وحاضرٍ حائر..." data-fr="Entre un passé lointain et un présent troublé...">بين ماضٍ غابر وحاضرٍ حائر...</p>
-          <h2 data-ar="بعض الحكايات<br><em>لا تنتمي إلى زمن واحد.</em>" data-fr="Certaines histoires<br><em>n’appartiennent à aucune époque.</em>">بعض الحكايات<br><em>لا تنتمي إلى زمن واحد.</em></h2>
-        </div>
-        <div class="story-text">
-          <p data-ar="بين ماضٍ غابر يعانق أسرار الحضارات، وحاضرٍ مثقل بالأسئلة والحنين، تولد حكاية عشق لا تحدّها الأزمنة." data-fr="Entre un passé lointain, gardien des secrets des civilisations, et un présent chargé de questions et de nostalgie, naît une histoire d’amour que le temps ne peut limiter.">بين ماضٍ غابر يعانق أسرار الحضارات، وحاضرٍ مثقل بالأسئلة والحنين، تولد حكاية عشق لا تحدّها الأزمنة.</p>
-          <p data-ar="هو شاب من عصرنا، يبحث قلبه عن معنى الحب الحقيقي، لتقوده المصادفة نحو فتاة غامضة من زمن بعيد، تحمل في عينيها سرّ الماضي وسحر بابل." data-fr="C’est un jeune homme de notre époque, en quête du véritable amour. Le hasard le conduit vers une jeune femme mystérieuse venue d’un autre temps, porteuse des secrets du passé et de la magie de Babylone.">هو شاب من عصرنا، يبحث قلبه عن معنى الحب الحقيقي، لتقوده المصادفة نحو فتاة غامضة من زمن بعيد، تحمل في عينيها سرّ الماضي وسحر بابل.</p>
-          <p data-ar="«عاشق من وراء الزمن» ليست مجرد قصة، بل رحلة في عمق القلب والذاكرة، حيث يصبح الحب رسالة تتجاوز حدود المكان والزمان." data-fr="« Un amoureux au-delà du temps » est plus qu’une histoire : un voyage au cœur de l’âme et de la mémoire, où l’amour devient un message qui dépasse l’espace et le temps.">«عاشق من وراء الزمن» ليست مجرد قصة، بل رحلة في عمق القلب والذاكرة، حيث يصبح الحب رسالة تتجاوز حدود المكان والزمان.</p>
-        </div>
-      </div>
-      <div class="themes">
-        <span data-ar="غموض" data-fr="Mystère">غموض</span><b>✧</b>
-        <span data-ar="فانتازيا" data-fr="Fantasy">فانتازيا</span><b>✧</b>
-        <span data-ar="رومانسية" data-fr="Romance">رومانسية</span><b>✧</b>
-        <span data-ar="السفر عبر الزمن" data-fr="Voyage dans le temps">السفر عبر الزمن</span>
-      </div>
-    </section>
+  <div class="hero-book">
+    <div class="book-covers" aria-label="الغلاف الأمامي وكعب الكتاب والغلاف الخلفي">
+      <figure class="cover-card cover-front-card">
+        <img src="assets/cover-front.webp" alt="الغلاف الأمامي لرواية عاشق من وراء الزمن">
+        <figcaption>الغلاف الأمامي</figcaption>
+      </figure>
+      <figure class="cover-card cover-spine-card">
+        <img src="assets/cover-spine.webp" alt="كعب رواية عاشق من وراء الزمن">
+        <figcaption>كعب الكتاب</figcaption>
+      </figure>
+      <figure class="cover-card cover-back-card">
+        <img src="assets/cover-back.webp" alt="الغلاف الخلفي لرواية عاشق من وراء الزمن">
+        <figcaption>الغلاف الخلفي</figcaption>
+      </figure>
+    </div>
+    <span class="cover-caption" data-ar="الغلاف الأمامي والخلفي للرواية" data-fr="Couverture avant et arrière du roman">الغلاف الأمامي والخلفي للرواية</span>
+  </div>
 
-    <section class="quote-band">
-      <div class="quote-symbol">“</div>
-      <blockquote data-ar="الحب لا يسأل عن العمر، ولا يعرف حدود الزمن." data-fr="L’amour ne demande pas l’âge et ne connaît pas les frontières du temps.">الحب لا يسأل عن العمر، ولا يعرف حدود الزمن.</blockquote>
-      <span data-ar="من عالم عاشق من وراء الزمن" data-fr="De l’univers du roman">من عالم عاشق من وراء الزمن</span>
-    </section>
+  <div class="scroll-cue">
+    <span></span>
+    <small data-ar="اكتشف الحكاية" data-fr="Explorer l’histoire">اكتشف الحكاية</small>
+  </div>
+</section>
 
-    <section class="author section" id="author">
-      <div class="author-art"><img src="assets/back-cover.png" alt="الجهة الخلفية لغلاف الرواية"></div>
-      <div class="author-copy">
-        <div class="section-label"><span>02</span><i></i><span data-ar="عن الكاتب" data-fr="L’auteur">عن الكاتب</span></div>
-        <p class="kicker" data-ar="وراء كل حكاية... صوت" data-fr="Derrière chaque histoire… une voix">وراء كل حكاية... صوت</p>
-        <h2 data-ar="بدر الدين" data-fr="Badr Eddine">بدر الدين</h2>
-        <p data-ar="كاتب يقدّم في «عاشق من وراء الزمن» عالماً يمزج الخيال بالغموض، ويأخذ القارئ في رحلة بين الذاكرة والحب وأسرار الماضي." data-fr="Avec « Un amoureux au-delà du temps », Badr Eddine propose un univers mêlant imaginaire et mystère, dans un voyage entre mémoire, amour et secrets du passé.">كاتب يقدّم في «عاشق من وراء الزمن» عالماً يمزج الخيال بالغموض، ويأخذ القارئ في رحلة بين الذاكرة والحب وأسرار الماضي.</p>
-      </div>
-    </section>
+<section class="intro section" id="story">
+  <div class="section-label">
+    <span>01</span>
+    <i></i>
+    <span data-ar="عن الرواية" data-fr="Le roman">عن الرواية</span>
+  </div>
 
-    <section class="release section" id="reserve">
-      <div class="section-label"><span>03</span><i></i><span data-ar="الإصدار والحجز" data-fr="Sortie et réservation">الإصدار والحجز</span></div>
-      <p class="kicker" data-ar="اقترب موعد الحكاية" data-fr="Le début de l’histoire approche">اقترب موعد الحكاية</p>
-      <h2 data-ar="كن من أوائل<br><em>من يكتشفونها.</em>" data-fr="Soyez parmi les premiers<br><em>à la découvrir.</em>">كن من أوائل<br><em>من يكتشفونها.</em></h2>
-      <p class="release-note" data-ar="الإصدار المتوقع بعد أسبوع. تابع التحديثات وتواصل عبر إنستغرام للاستفسار عن الحجز والشراء." data-fr="Sortie prévue dans une semaine. Suivez les actualités et contactez-nous sur Instagram pour toute question concernant la réservation et l’achat.">الإصدار المتوقع بعد أسبوع. تابع التحديثات وتواصل عبر إنستغرام للاستفسار عن الحجز والشراء.</p>
-      <div class="countdown" aria-label="العد التنازلي">
-        <div><strong id="days">07</strong><span data-ar="أيام" data-fr="Jours">أيام</span></div>
-        <div><strong id="hours">00</strong><span data-ar="ساعات" data-fr="Heures">ساعات</span></div>
-        <div><strong id="minutes">00</strong><span data-ar="دقائق" data-fr="Minutes">دقائق</span></div>
-        <div><strong id="seconds">00</strong><span data-ar="ثوانٍ" data-fr="Secondes">ثوانٍ</span></div>
-      </div>
-      <a class="button button-gold instagram-button" href="https://www.instagram.com/badr__23231/" target="_blank" rel="noopener noreferrer">
-        <span data-ar="احجز أو استفسر عبر Instagram" data-fr="Réserver ou demander via Instagram">احجز أو استفسر عبر Instagram</span><b>↗</b>
-      </a>
-      <small class="fineprint" data-ar="موعد الإصدار المعروض تقديري ويمكن تحديثه." data-fr="La date de sortie affichée est indicative et peut être modifiée.">موعد الإصدار المعروض تقديري ويمكن تحديثه.</small>
-    </section>
-  </main>
+  <div class="intro-grid">
+    <div>
+      <p class="kicker" data-ar="بين ماضٍ غابر وحاضرٍ حائر..." data-fr="Entre un passé lointain et un présent troublé...">بين ماضٍ غابر وحاضرٍ حائر...</p>
 
-  <footer>
-    <div class="footer-brand">عاشق من وراء الزمن <span>✧</span></div>
-    <p data-ar="رواية بقلم بدر الدين" data-fr="Un roman de Badr Eddine">رواية بقلم بدر الدين</p>
-    <a href="https://www.instagram.com/badr__23231/" target="_blank" rel="noopener noreferrer">@badr__23231</a>
-    <small>© <span id="year"></span> Badr Eddine. <span data-ar="جميع الحقوق محفوظة." data-fr="Tous droits réservés.">جميع الحقوق محفوظة.</span></small>
-  </footer>
-  <script src="script.js"></script>
+      <h2 data-ar="بعض الحكايات<br><em>لا تنتمي إلى زمن واحد.</em>" data-fr="Certaines histoires<br><em>n’appartiennent à aucune époque.</em>">بعض الحكايات<br><em>لا تنتمي إلى زمن واحد.</em></h2>
+    </div>
+
+    <div class="story-text">
+      <p data-ar="بين ماضٍ غابر يعانق أسرار الحضارات، وحاضرٍ مثقل بالأسئلة والحنين، تولد حكاية عشق لا تحدّها الأزمنة." data-fr="Entre un passé lointain, gardien des secrets des civilisations, et un présent chargé de questions et de nostalgie, naît une histoire d’amour que le temps ne peut limiter.">بين ماضٍ غابر يعانق أسرار الحضارات، وحاضرٍ مثقل بالأسئلة والحنين، تولد حكاية عشق لا تحدّها الأزمنة.</p>
+
+      <p data-ar="هو شاب من عصرنا، يبحث قلبه عن معنى الحب الحقيقي، لتقوده المصادفة نحو فتاة غامضة من زمن بعيد، تحمل في عينيها سرّ الماضي وسحر بابل." data-fr="C’est un jeune homme de notre époque, en quête du véritable amour. Le hasard le conduit vers une jeune femme mystérieuse venue d’un autre temps, porteuse des secrets du passé et de la magie de Babylone.">هو شاب من عصرنا، يبحث قلبه عن معنى الحب الحقيقي، لتقوده المصادفة نحو فتاة غامضة من زمن بعيد، تحمل في عينيها سرّ الماضي وسحر بابل.</p>
+
+      <p data-ar="«عاشق من وراء الزمن» ليست مجرد قصة، بل رحلة في عمق القلب والذاكرة، حيث يصبح الحب رسالة تتجاوز حدود المكان والزمان." data-fr="« Un amoureux au-delà du temps » est plus qu’une histoire : un voyage au cœur de l’âme et de la mémoire, où l’amour devient un message qui dépasse l’espace et le temps.">«عاشق من وراء الزمن» ليست مجرد قصة، بل رحلة في عمق القلب والذاكرة، حيث يصبح الحب رسالة تتجاوز حدود المكان والزمان.</p>
+    </div>
+  </div>
+
+  <div class="themes">
+    <span>✧ <b data-ar="الحب" data-fr="Amour">الحب</b></span>
+    <span>✧ <b data-ar="الذاكرة" data-fr="Mémoire">الذاكرة</b></span>
+    <span>✧ <b data-ar="الزمن" data-fr="Temps">الزمن</b></span>
+    <span>✧ <b data-ar="الغموض" data-fr="Mystère">الغموض</b></span>
+  </div>
+</section>
+
+<section class="quote-band">
+  <div class="quote-frame">
+    <div class="quote-symbol">❧</div>
+    <blockquote data-ar="الحب لا يسأل عن العمر، ولا يعرف حدود الزمن." data-fr="L’amour ne demande pas l’âge et ne connaît pas les frontières du temps.">الحب لا يسأل عن العمر، ولا يعرف حدود الزمن.</blockquote>
+    <div class="quote-flourish">✧　━━━━━━━━　✧</div>
+  </div>
+</section>
+
+<section class="secrets section" id="secrets">
+  <div class="section-label">
+    <span>02</span>
+    <i></i>
+    <span data-ar="أسرار بين الصفحات" data-fr="Secrets entre les pages">أسرار بين الصفحات</span>
+  </div>
+
+  <div class="secrets-head">
+    <p class="kicker" data-ar="بعض الأبواب لا تُفتح إلا بالقراءة" data-fr="Certaines portes ne s’ouvrent qu’à la lecture">بعض الأبواب لا تُفتح إلا بالقراءة</p>
+
+    <h2 data-ar="ما الذي يختبئ<br><em>بين السطور؟</em>" data-fr="Que se cache-t-il<br><em>entre les lignes ?</em>">ما الذي يختبئ<br><em>بين السطور؟</em></h2>
+
+    <p data-ar="ليست كل الأسرار قابلة للكشف… بعضها ينتظر الصفحة المناسبة." data-fr="Tous les secrets ne se dévoilent pas… certains attendent la bonne page.">ليست كل الأسرار قابلة للكشف… بعضها ينتظر الصفحة المناسبة.</p>
+  </div>
+
+  <div class="secret-cards">
+    <article class="secret-card">
+      <span class="secret-number">01</span>
+      <div class="secret-icon">✧</div>
+      <h3 data-ar="أثرٌ لا يشيخ" data-fr="Une trace éternelle">أثرٌ لا يشيخ</h3>
+      <p data-ar="حين يصمت التاريخ… تتكلم التفاصيل." data-fr="Quand l’Histoire se tait, les détails parlent.">حين يصمت التاريخ… تتكلم التفاصيل.</p>
+      <span class="secret-line"></span>
+    </article>
+
+    <article class="secret-card">
+      <span class="secret-number">02</span>
+      <div class="secret-icon">◈</div>
+      <h3 data-ar="نافذة على المجهول" data-fr="Une fenêtre sur l’inconnu">نافذة على المجهول</h3>
+      <p data-ar="ليس كل ما نراه… هو ما نعرفه." data-fr="Tout ce que l’on voit n’est pas forcément ce que l’on connaît.">ليس كل ما نراه… هو ما نعرفه.</p>
+      <span class="secret-line"></span>
+    </article>
+
+    <article class="secret-card">
+      <span class="secret-number">03</span>
+      <div class="secret-icon">⌛</div>
+      <h3 data-ar="موعد مع الزمن" data-fr="Un rendez-vous avec le temps">موعد مع الزمن</h3>
+      <p data-ar="بعض اللقاءات تبدأ قبل أن تحدث." data-fr="Certaines rencontres commencent avant même d’avoir lieu.">بعض اللقاءات تبدأ قبل أن تحدث.</p>
+      <span class="secret-line"></span>
+    </article>
+  </div>
+</section>
+
+<section class="author section" id="author">
+  <div class="author-book">
+    <div class="author-book-frame">
+      <img src="assets/cover-front.webp" alt="الغلاف الأصلي لرواية عاشق من وراء الزمن">
+    </div>
+  </div>
+
+  <div class="author-copy">
+    <div class="section-label">
+      <span>03</span>
+      <i></i>
+      <span data-ar="عن الكاتب" data-fr="L’auteur">عن الكاتب</span>
+    </div>
+
+    <p class="kicker" data-ar="وراء كل حكاية... صوت" data-fr="Derrière chaque histoire… une voix">وراء كل حكاية... صوت</p>
+
+    <h2 data-ar="بدر الدين" data-fr="Badr Eddine">بدر الدين</h2>
+
+    <p data-ar="كاتب يقدّم في «عاشق من وراء الزمن» عالماً يمزج الخيال بالغموض، ويأخذ القارئ في رحلة بين الذاكرة والحب وأسرار الماضي." data-fr="Avec « Un amoureux au-delà du temps », Badr Eddine propose un univers mêlant imaginaire et mystère, dans un voyage entre mémoire, amour et secrets du passé.">كاتب يقدّم في «عاشق من وراء الزمن» عالماً يمزج الخيال بالغموض، ويأخذ القارئ في رحلة بين الذاكرة والحب وأسرار الماضي.</p>
+
+    <div class="signature">Badr Eddine</div>
+
+    <a class="author-social" href="https://www.instagram.com/badr__23231/" target="_blank" rel="noopener noreferrer">
+      <span>Instagram</span>
+      <b>@badr__23231 ↗</b>
+    </a>
+  </div>
+</section>
+
+<section class="release section" id="reserve">
+  <div class="section-label centered">
+    <span>04</span>
+    <i></i>
+    <span data-ar="الطلب والحجز" data-fr="Commande et réservation">الطلب والحجز</span>
+  </div>
+
+  <p class="kicker" data-ar="موعد الإصدار يقترب" data-fr="La sortie approche">موعد الإصدار يقترب</p>
+
+  <h2 data-ar="باقي على صدور الرواية" data-fr="Avant la sortie du roman">باقي على صدور الرواية</h2>
+
+  <p class="release-date" data-ar="9 نوفمبر 2026" data-fr="9 novembre 2026">9 نوفمبر 2026</p>
+
+  <div class="countdown" aria-label="العد التنازلي">
+    <div><strong id="cdDays">00</strong><span data-ar="أيام" data-fr="Jours">أيام</span></div>
+    <div><strong id="cdHours">00</strong><span data-ar="ساعات" data-fr="Heures">ساعات</span></div>
+    <div><strong id="cdMinutes">00</strong><span data-ar="دقائق" data-fr="Minutes">دقائق</span></div>
+    <div><strong id="cdSeconds">00</strong><span data-ar="ثوانٍ" data-fr="Secondes">ثوانٍ</span></div>
+  </div>
+
+  <div class="order-heading">
+    <h3 data-ar="احجز نسختك" data-fr="Réservez votre exemplaire">احجز نسختك</h3>
+    <p data-ar="املأ المعلومات التالية لإعداد طلبك." data-fr="Remplissez les informations suivantes pour préparer votre commande.">املأ المعلومات التالية لإعداد طلبك.</p>
+  </div>
+
+  <form id="orderForm" class="order-form">
+    <div class="form-grid">
+      <label>
+        <span data-ar="الاسم" data-fr="Prénom">الاسم</span>
+        <input name="firstName" required autocomplete="given-name" maxlength="70" placeholder="الاسم" data-ar-placeholder="الاسم" data-fr-placeholder="Prénom">
+      </label>
+
+      <label>
+        <span data-ar="اللقب" data-fr="Nom">اللقب</span>
+        <input name="lastName" required autocomplete="family-name" maxlength="70" placeholder="اللقب" data-ar-placeholder="اللقب" data-fr-placeholder="Nom">
+      </label>
+
+      <label>
+        <span data-ar="رقم الهاتف" data-fr="Téléphone">رقم الهاتف</span>
+        <input name="phone" type="tel" required inputmode="tel" autocomplete="tel" maxlength="20" placeholder="05 / 06 / 07" data-ar-placeholder="05 / 06 / 07" data-fr-placeholder="05 / 06 / 07">
+      </label>
+
+      <label>
+        <span data-ar="عدد النسخ" data-fr="Nombre d’exemplaires">عدد النسخ</span>
+        <input name="quantity" id="quantity" type="number" min="1" max="20" value="1" required>
+      </label>
+
+      <label>
+        <span data-ar="الولاية" data-fr="Wilaya">الولاية</span>
+        <select name="wilaya" id="wilaya" required>
+          <option value="" data-ar="اختر الولاية" data-fr="Choisir une wilaya">اختر الولاية</option>
+        </select>
+      </label>
+
+      <label>
+        <span data-ar="البلدية" data-fr="Commune">البلدية</span>
+        <select name="commune" id="commune" required disabled>
+          <option value="" data-ar="اختر الولاية أولاً" data-fr="Choisissez d’abord la wilaya">اختر الولاية أولاً</option>
+        </select>
+      </label>
+    </div>
+
+    <fieldset class="delivery-choice">
+      <legend data-ar="طريقة التوصيل" data-fr="Mode de livraison">طريقة التوصيل</legend>
+
+      <label class="delivery-option">
+        <input type="radio" name="delivery" value="office" checked>
+        <span>
+          <b data-ar="إلى مكتب الاستلام" data-fr="Vers un point relais">إلى مكتب الاستلام</b>
+          <small data-ar="400 دج" data-fr="400 DA">400 دج</small>
+        </span>
+      </label>
+
+      <label class="delivery-option">
+        <input type="radio" name="delivery" value="home">
+        <span>
+          <b data-ar="إلى المنزل" data-fr="À domicile">إلى المنزل</b>
+          <small data-ar="800 دج" data-fr="800 DA">800 دج</small>
+        </span>
+      </label>
+    </fieldset>
+
+    <div class="order-total">
+      <span data-ar="سعر النسخة: 1,500 دج" data-fr="Prix par exemplaire : 1 500 DA">سعر النسخة: 1,500 دج</span>
+
+      <strong>
+        <span data-ar="المجموع التقديري" data-fr="Total estimé">المجموع التقديري</span>
+        <b id="totalPrice">1,900 دج</b>
+      </strong>
+
+      <small data-ar="المجموع = عدد النسخ × 1,500 دج + رسوم التوصيل (400 دج للمكتب أو 800 دج للمنزل)." data-fr="Total = quantité × 1 500 DA + livraison (400 DA au point relais ou 800 DA à domicile).">المجموع = عدد النسخ × 1,500 دج + رسوم التوصيل (400 دج للمكتب أو 800 دج للمنزل).</small>
+    </div>
+
+    <label class="consent">
+      <input type="checkbox" name="consent" required>
+      <span data-ar="أوافق على استخدام بياناتي للتواصل معي بشأن هذا الطلب فقط." data-fr="J’accepte l’utilisation de mes données uniquement pour me contacter au sujet de cette commande.">أوافق على استخدام بياناتي للتواصل معي بشأن هذا الطلب فقط.</span>
+    </label>
+
+    <button class="button button-gold submit-order" type="submit">
+      <span data-ar="إرسال طلب الحجز" data-fr="Envoyer la précommande">إرسال طلب الحجز</span>
+      <span>↙</span>
+    </button>
+
+    <p id="orderFeedback" class="order-feedback" role="status" aria-live="polite"></p>
+  </form>
+
+  <div class="inquiry-separate">
+    <span data-ar="استفسار قبل الحجز؟" data-fr="Une question avant de réserver ?">استفسار قبل الحجز؟</span>
+    <a href="https://www.instagram.com/badr__23231/" target="_blank" rel="noopener noreferrer" class="inquiry-link">
+      <span data-ar="تواصل عبر Instagram" data-fr="Contactez-nous sur Instagram">تواصل عبر Instagram</span> ↗
+    </a>
+  </div>
+
+  <p class="privacy-note" data-ar="تُرسل بيانات الطلب إلى البريد المخصص بعد تفعيل خدمة الاستقبال. لا تُخزّن بيانات الطلب في هذا الموقع." data-fr="Les données seront envoyées à l’adresse dédiée après activation du service. Le site ne stocke pas les commandes.">تُرسل بيانات الطلب إلى البريد المخصص بعد تفعيل خدمة الاستقبال. لا تُخزّن بيانات الطلب في هذا الموقع.</p>
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-brand">عاشق من وراء الزمن <span>✧</span></div>
+  <p data-ar="رواية بقلم بدر الدين" data-fr="Un roman de Badr Eddine">رواية بقلم بدر الدين</p>
+  <a href="https://www.instagram.com/badr__23231/" target="_blank" rel="noopener noreferrer">@badr__23231</a>
+  <small>© <span id="year"></span> Badr Eddine. <span data-ar="جميع الحقوق محفوظة." data-fr="Tous droits réservés.">جميع الحقوق محفوظة.</span></small>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
