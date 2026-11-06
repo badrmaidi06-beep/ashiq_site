@@ -1,29 +1,30 @@
+
 const langBtn = document.getElementById("langBtn");
 let currentLang = "ar";
 
 const wilayas = [
-["01","أدرار","Adrar"],["02","الشلف","Chlef"],["03","الأغواط","Laghouat"],
-["04","أم البواقي","Oum El Bouaghi"],["05","باتنة","Batna"],["06","بجاية","Béjaïa"],
-["07","بسكرة","Biskra"],["08","بشار","Béchar"],["09","البليدة","Blida"],
-["10","البويرة","Bouira"],["11","تمنراست","Tamanrasset"],["12","تبسة","Tébessa"],
-["13","تلمسان","Tlemcen"],["14","تيارت","Tiaret"],["15","تيزي وزو","Tizi Ouzou"],
-["16","الجزائر","Alger"],["17","الجلفة","Djelfa"],["18","جيجل","Jijel"],
-["19","سطيف","Sétif"],["20","سعيدة","Saïda"],["21","سكيكدة","Skikda"],
-["22","سيدي بلعباس","Sidi Bel Abbès"],["23","عنابة","Annaba"],
-["24","قالمة","Guelma"],["25","قسنطينة","Constantine"],["26","المدية","Médéa"],
-["27","مستغانم","Mostaganem"],["28","المسيلة","M’Sila"],["29","معسكر","Mascara"],
-["30","ورقلة","Ouargla"],["31","وهران","Oran"],["32","البيض","El Bayadh"],
-["33","إليزي","Illizi"],["34","برج بوعريريج","Bordj Bou Arréridj"],
-["35","بومرداس","Boumerdès"],["36","الطارف","El Tarf"],["37","تندوف","Tindouf"],
-["38","تسمسيلت","Tissemsilt"],["39","الوادي","El Oued"],["40","خنشلة","Khenchela"],
-["41","سوق أهراس","Souk Ahras"],["42","تيبازة","Tipaza"],["43","ميلة","Mila"],
-["44","عين الدفلى","Aïn Defla"],["45","النعامة","Naâma"],
-["46","عين تموشنت","Aïn Témouchent"],["47","غرداية","Ghardaïa"],
-["48","غليزان","Relizane"],["49","تيميمون","Timimoun"],
-["50","برج باجي مختار","Bordj Badji Mokhtar"],["51","أولاد جلال","Ouled Djellal"],
-["52","بني عباس","Béni Abbès"],["53","عين صالح","In Salah"],
-["54","عين قزام","In Guezzam"],["55","تقرت","Touggourt"],
-["56","جانت","Djanet"],["57","المغير","El M’Ghair"],["58","المنيعة","El Meniaa"]
+  ["01","أدرار","Adrar"],["02","الشلف","Chlef"],["03","الأغواط","Laghouat"],
+  ["04","أم البواقي","Oum El Bouaghi"],["05","باتنة","Batna"],["06","بجاية","Béjaïa"],
+  ["07","بسكرة","Biskra"],["08","بشار","Béchar"],["09","البليدة","Blida"],
+  ["10","البويرة","Bouira"],["11","تمنراست","Tamanrasset"],["12","تبسة","Tébessa"],
+  ["13","تلمسان","Tlemcen"],["14","تيارت","Tiaret"],["15","تيزي وزو","Tizi Ouzou"],
+  ["16","الجزائر","Alger"],["17","الجلفة","Djelfa"],["18","جيجل","Jijel"],
+  ["19","سطيف","Sétif"],["20","سعيدة","Saïda"],["21","سكيكدة","Skikda"],
+  ["22","سيدي بلعباس","Sidi Bel Abbès"],["23","عنابة","Annaba"],
+  ["24","قالمة","Guelma"],["25","قسنطينة","Constantine"],["26","المدية","Médéa"],
+  ["27","مستغانم","Mostaganem"],["28","المسيلة","M’Sila"],["29","معسكر","Mascara"],
+  ["30","ورقلة","Ouargla"],["31","وهران","Oran"],["32","البيض","El Bayadh"],
+  ["33","إليزي","Illizi"],["34","برج بوعريريج","Bordj Bou Arréridj"],
+  ["35","بومرداس","Boumerdès"],["36","الطارف","El Tarf"],["37","تندوف","Tindouf"],
+  ["38","تسمسيلت","Tissemsilt"],["39","الوادي","El Oued"],["40","خنشلة","Khenchela"],
+  ["41","سوق أهراس","Souk Ahras"],["42","تيبازة","Tipaza"],["43","ميلة","Mila"],
+  ["44","عين الدفلى","Aïn Defla"],["45","النعامة","Naâma"],
+  ["46","عين تموشنت","Aïn Témouchent"],["47","غرداية","Ghardaïa"],
+  ["48","غليزان","Relizane"],["49","تيميمون","Timimoun"],
+  ["50","برج باجي مختار","Bordj Badji Mokhtar"],["51","أولاد جلال","Ouled Djellal"],
+  ["52","بني عباس","Béni Abbès"],["53","عين صالح","In Salah"],
+  ["54","عين قزام","In Guezzam"],["55","تقرت","Touggourt"],
+  ["56","جانت","Djanet"],["57","المغير","El M’Ghair"],["58","المنيعة","El Meniaa"]
 ];
 
 const wilayaSelect = document.getElementById("wilaya");
@@ -59,10 +60,16 @@ function fillWilayas() {
 function fillCommunes() {
   const code = wilayaSelect.value;
   communeSelect.innerHTML = "";
+
   const fallback = document.getElementById("communeFallback");
 
   if (!code) {
-    communeSelect.append(opt("", "اختر الولاية أولاً", "Choisissez d’abord la wilaya"));
+    communeSelect.append(opt(
+      "",
+      "اختر الولاية أولاً",
+      "Choisissez d’abord la wilaya"
+    ));
+
     communeSelect.disabled = true;
     communeSelect.required = false;
 
@@ -75,7 +82,12 @@ function fillCommunes() {
   }
 
   if (!communesLoaded && communesLoading) {
-    communeSelect.append(opt("", "جارٍ تحميل البلديات…", "Chargement des communes…"));
+    communeSelect.append(opt(
+      "",
+      "جارٍ تحميل البلديات…",
+      "Chargement des communes…"
+    ));
+
     communeSelect.disabled = true;
     communeSelect.required = false;
 
@@ -89,7 +101,11 @@ function fillCommunes() {
   const entry = communesData[code];
 
   if (entry && entry.length) {
-    communeSelect.append(opt("", "اختر البلدية", "Choisir une commune"));
+    communeSelect.append(opt(
+      "",
+      "اختر البلدية",
+      "Choisir une commune"
+    ));
 
     const list = [...entry].sort((a, b) =>
       (a.local || "").localeCompare(b.local || "", "ar")
@@ -139,40 +155,41 @@ function loadCommunesData() {
   communesLoadPromise = fetch(
     "https://raw.githubusercontent.com/open-admin-data/algeria-administrative-divisions/master/data/all-commune.json"
   )
-  .then(r => {
-    if (!r.ok) throw new Error("commune data unavailable");
-    return r.json();
-  })
-  .then(data => {
-    communesData = {};
+    .then(r => {
+      if (!r.ok) throw new Error("commune data unavailable");
+      return r.json();
+    })
+    .then(data => {
+      communesData = {};
 
-    if (Array.isArray(data)) {
-      data.forEach(c => {
-        if (c.level !== 3 || !Array.isArray(c.ancestors)) return;
+      if (Array.isArray(data)) {
+        data.forEach(c => {
+          if (c.level !== 3 || !Array.isArray(c.ancestors)) return;
 
-        const w = c.ancestors.find(a => a.level === 1);
-        const match = w?.id?.match(/^DZ(\d{3})$/);
+          const w = c.ancestors.find(a => a.level === 1);
+          const match = w?.id?.match(/^DZ(\d{3})$/);
 
-        if (!match) return;
+          if (!match) return;
 
-        const code = String(Number(match[1])).padStart(2, "0");
-        if (Number(code) > 58) return;
+          const code = String(Number(match[1])).padStart(2, "0");
 
-        (communesData[code] ||= []).push({
-          local: c.name?.local || "",
-          fr: c.name?.en || ""
+          if (Number(code) > 58) return;
+
+          (communesData[code] ||= []).push({
+            local: c.name?.local || "",
+            fr: c.name?.en || ""
+          });
         });
-      });
-    }
+      }
 
-    communesLoaded = true;
-    communesLoading = false;
-    fillCommunes();
-  })
-  .catch(() => {
-    communesLoading = false;
-    fillCommunes();
-  });
+      communesLoaded = true;
+      communesLoading = false;
+      fillCommunes();
+    })
+    .catch(() => {
+      communesLoading = false;
+      fillCommunes();
+    });
 
   return communesLoadPromise;
 }
@@ -194,6 +211,7 @@ communeFallback.name = "communeFallback";
 communeFallback.maxLength = 100;
 communeFallback.placeholder = "اكتب اسم البلدية";
 communeFallback.hidden = true;
+
 communeFallback.setAttribute("aria-label", "اسم البلدية");
 
 communeSelect.parentElement.appendChild(communeFallback);
@@ -305,19 +323,15 @@ function updateCountdown() {
     ["cdMinutes", m],
     ["cdSeconds", s]
   ]) {
-    document.getElementById(id).textContent = String(val).padStart(2, "0");
+    const element = document.getElementById(id);
+    if (element) element.textContent = String(val).padStart(2, "0");
   }
 }
 
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-// ======================================
-// أسعار التوصيل الجديدة
-// المنزل: 800 دج لجميع الولايات
-// مكتب الاستلام: عنابة مجاني، باقي الولايات 400 دج
-// ======================================
-
+// Price calculator
 const qty = document.getElementById("quantity");
 const total = document.getElementById("totalPrice");
 
@@ -325,6 +339,9 @@ function isAnnaba() {
   return wilayaSelect.value === "23";
 }
 
+// قواعد التوصيل:
+// المنزل: 800 دج لجميع الولايات.
+// مكتب الاستلام: مجاني في عنابة، و400 دج في باقي الولايات.
 function getDeliveryFee(delivery) {
   if (delivery === "home") return 800;
 
@@ -335,25 +352,32 @@ function getDeliveryFee(delivery) {
   return 0;
 }
 
+// تحديث الأسعار الظاهرة بجانب خيارات التوصيل
 function updateDeliveryLabels() {
-  const officeSmall = document.querySelector(
+  const officeInput = document.querySelector(
     'input[name="delivery"][value="office"]'
-  )?.parentElement.querySelector("small");
+  );
 
-  const homeSmall = document.querySelector(
+  const homeInput = document.querySelector(
     'input[name="delivery"][value="home"]'
-  )?.parentElement.querySelector("small");
+  );
 
-  if (officeSmall) {
-    if (isAnnaba()) {
-      officeSmall.textContent = currentLang === "ar" ? "مجاني" : "Gratuit";
-    } else {
-      officeSmall.textContent = currentLang === "ar" ? "400 دج" : "400 DA";
+  if (officeInput) {
+    const small = officeInput.closest(".delivery-option")?.querySelector("small");
+
+    if (small) {
+      small.textContent = isAnnaba()
+        ? (currentLang === "ar" ? "مجاني" : "Gratuit")
+        : (currentLang === "ar" ? "400 دج" : "400 DA");
     }
   }
 
-  if (homeSmall) {
-    homeSmall.textContent = currentLang === "ar" ? "800 دج" : "800 DA";
+  if (homeInput) {
+    const small = homeInput.closest(".delivery-option")?.querySelector("small");
+
+    if (small) {
+      small.textContent = currentLang === "ar" ? "800 دج" : "800 DA";
+    }
   }
 }
 
@@ -367,11 +391,11 @@ function updateTotal() {
   const deliveryFee = getDeliveryFee(delivery);
   const amount = count * 1400 + deliveryFee;
 
+  updateDeliveryLabels();
+
   total.textContent =
     amount.toLocaleString(currentLang === "ar" ? "ar-DZ" : "fr-FR") +
     (currentLang === "ar" ? " دج" : " DA");
-
-  updateDeliveryLabels();
 }
 
 qty.addEventListener("input", updateTotal);
@@ -392,7 +416,7 @@ function showInstagramConfirmation(order) {
   const isAr = currentLang === "ar";
 
   const message = isAr
-  ? `السلام عليكم، حاب نأكد طلب الرواية «عاشق من وراء الزمن».
+    ? `السلام عليكم، حاب نأكد طلب الرواية «عاشق من وراء الزمن».
 
 الاسم: ${order.firstName} ${order.lastName}
 رقم الهاتف: ${order.phone}
@@ -405,14 +429,14 @@ function showInstagramConfirmation(order) {
 المجموع: ${order.total.toLocaleString("ar-DZ")} دج
 
 شكراً لكم، ونتطلع إلى رحلة بين صفحات هذه الحكاية.`
-  : `Bonjour, je souhaite confirmer ma commande du roman « Un amoureux au-delà du temps ».
+    : `Bonjour, je souhaite confirmer ma commande du roman « Un amoureux au-delà du temps ».
 
 Prénom et nom : ${order.firstName} ${order.lastName}
 Téléphone : ${order.phone}
 Wilaya : ${order.wilaya}
 Commune : ${order.commune}
 Nombre d’exemplaires : ${order.quantity}
-Livraison : ${order.deliveryLabel}
+Mode de réception : ${order.deliveryLabel}
 Prix par exemplaire : ${order.unitPrice.toLocaleString("fr-FR")} DA
 Frais de livraison : ${order.deliveryFee === 0 ? "Gratuit" : order.deliveryFee.toLocaleString("fr-FR") + " DA"}
 Total : ${order.total.toLocaleString("fr-FR")} DA
@@ -445,9 +469,23 @@ Merci. Au plaisir de vous faire voyager entre les pages de cette histoire.`;
       ${isAr ? "تم تجهيز طلبك" : "Votre commande est prête"}
     </h2>
 
+    <div style="border-top:1px solid #715b3a;border-bottom:1px solid #715b3a;padding:14px 4px;margin:14px 0 18px;text-align:center">
+      <p style="color:#d8b978;font-size:17px;font-weight:700;margin:0 0 8px">
+        ${isAr ? "شكرًا لأنك اخترت أن تكون جزءًا من هذه الحكاية…" : "Merci d’avoir choisi de faire partie de cette histoire…"}
+      </p>
+      <p style="line-height:1.9;margin:0">
+        ${isAr
+          ? "كل رواية تبدأ بكلمات، لكنها لا تصبح حياةً إلا حين تجد قلبًا يقرأها. لقد حجزت مكانك بين صفحات «عاشق من وراء الزمن»، ونأمل أن تجد بين سطورها شيئًا يشبهك، وذكرى تبقى معك حتى بعد أن تطوي الصفحة الأخيرة."
+          : "Un roman commence par des mots, mais il ne prend vie que lorsqu’il trouve un cœur pour le lire. Vous avez réservé votre place entre les pages de « Un amoureux au-delà du temps ». Puissiez-vous y trouver quelque chose qui vous ressemble, et un souvenir qui vous accompagne même après la dernière page."}
+      </p>
+      <p style="color:#d8b978;margin:10px 0 0;font-weight:700">
+        ${isAr ? "بدر الدين ✧" : "Badr Eddine ✧"}
+      </p>
+    </div>
+
     <p style="line-height:1.8;text-align:center;margin:0 0 16px">
       ${isAr
-        ? "انسخ التفاصيل التالية، ثم افتح Instagram والصقها في المحادثة وأرسلها بنفسك."
+        ? "انسخ تفاصيل الطلب التالية، ثم افتح Instagram والصقها في المحادثة وأرسلها بنفسك."
         : "Copiez les détails ci-dessous, ouvrez Instagram, collez-les dans la conversation et envoyez le message vous-même."}
     </p>
 
@@ -537,13 +575,14 @@ form.addEventListener("submit", e => {
   if (!form.reportValidity()) return;
 
   const selectedWilaya = wilayas.find(w => w[0] === wilayaSelect.value);
+
   const quantity = Math.max(1, Math.min(20, Number(qty.value) || 1));
 
   const delivery = document.querySelector(
     'input[name="delivery"]:checked'
   ).value;
 
-  // نفس قاعدة الأسعار المعتمدة في حاسبة السعر
+  // نفس قاعدة الأسعار في الحاسبة وفي الطلب النهائي
   const deliveryFee = getDeliveryFee(delivery);
   const totalAmount = quantity * 1400 + deliveryFee;
 
@@ -591,8 +630,12 @@ if (bookFlip) {
 
     if (caption) {
       caption.textContent = flipped
-        ? (currentLang === "ar" ? "اضغط للعودة إلى الغلاف الأمامي" : "Cliquez pour revenir à la couverture")
-        : (currentLang === "ar" ? "اضغط على الكتاب لمشاهدة الخلف" : "Cliquez sur le livre pour voir le dos");
+        ? (currentLang === "ar"
+          ? "اضغط للعودة إلى الغلاف الأمامي"
+          : "Cliquez pour revenir à la couverture")
+        : (currentLang === "ar"
+          ? "اضغط على الكتاب لمشاهدة الخلف"
+          : "Cliquez sur le livre pour voir le dos");
     }
   });
 }
