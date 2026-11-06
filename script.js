@@ -497,18 +497,11 @@ Merci. Au plaisir de vous faire voyager entre les pages de cette histoire.`;
       </button>
 
       <a href="https://ig.me/m/badr__23231" target="_blank" rel="noopener noreferrer" style="flex:1;min-width:140px;display:flex;align-items:center;justify-content:center;padding:12px;border:1px solid #c7a66a;border-radius:9px;color:#f5e8d2;text-decoration:none;font:inherit">
-        ${isAr ? "فتح محادثة Instagram ↗" : "Ouvrir Instagram ↗"}
+        ${isAr ? "فتح Instagram badr__23231 ↗" : "Ouvrir Instagram badr__23231 ↗"}
       </a>
     </div>
 
     <p id="copyOrderStatus" role="status" style="min-height:24px;margin:10px 0 0;color:#c7a66a"></p>
-
-    <p style="font-size:13px;line-height:1.7;opacity:.8">
-      ${isAr
-        ? "ملاحظة: Instagram لا يرسل الرسالة تلقائياً. لازم تلصقها وتضغط على إرسال."
-        : "Remarque : Instagram n’envoie pas le message automatiquement. Collez-le puis appuyez sur Envoyer."}
-    </p>
-
     <button id="closeInstagramOrder" type="button" style="width:100%;margin-top:8px;padding:10px;border:1px solid #715b3a;border-radius:9px;background:transparent;color:#f5e8d2;font:inherit;cursor:pointer">
       ${isAr ? "إغلاق" : "Fermer"}
     </button>
